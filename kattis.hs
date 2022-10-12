@@ -46,10 +46,10 @@ orddelare (x:xs)
 -- 4 Listskyffling.
 
 -- Function to get the Every Other number the given list for example all odd numbers at the beggining
-EverOther :: Int -> [a] -> [a]
-EverOther n [] = []
-EverOther n s  = head s : EverOther n (drop n s)
+everother :: Int -> [a] -> [a]
+everother n [] = []
+everother n s  = head s : everother n (drop n s)
  
 skyffla :: [a] -> [a]
 skyffla [] = []
-skyffla s  = EverOther 2 s ++ skyffla (EverOther 2 (tail s))
+skyffla s  = everother 2 s ++ skyffla (everother 2 (tail s))
